@@ -24,4 +24,5 @@ public class FilmsService {
     public void addNew(FilmsItem filmsItem) {
         filmsRepository.save(filmsItem);
     }
+
 }

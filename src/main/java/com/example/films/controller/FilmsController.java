@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.desktop.PreferencesEvent;
 import java.util.List;
 @RestController
 @RequestMapping(path = "/films", method = RequestMethod.GET)
@@ -29,6 +30,11 @@ public class FilmsController {
     @PostMapping(value = "/addNew")
     public void addNew(@RequestBody FilmsItem filmsItem) {
         filmsService.addNew(filmsItem);
+    }
+
+    @GetMapping(value = "/horror")
+    public List<FilmsItem> getHorrorFilms(){
+        return filmsService.
     }
 
 }
