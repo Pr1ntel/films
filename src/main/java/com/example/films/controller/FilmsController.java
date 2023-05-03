@@ -7,10 +7,9 @@ import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.desktop.PreferencesEvent;
 import java.util.List;
 @RestController
-@RequestMapping(path = "/films", method = RequestMethod.GET)
+@RequestMapping(path = "/films")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @AllArgsConstructor
 public class FilmsController {
@@ -32,9 +31,9 @@ public class FilmsController {
         filmsService.addNew(filmsItem);
     }
 
-    @GetMapping(value = "/horror")
-    public List<FilmsItem> getHorrorFilms(){
-        return filmsService.
+    @GetMapping(value = "/byStyle/{style}")
+    public List<FilmsItem> getFilmsByStyle(@PathVariable String style){
+        return filmsService.getFilmsByStyle(style);
     }
 
 }

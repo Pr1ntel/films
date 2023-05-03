@@ -30,4 +30,6 @@ public class FilmsItem {
 
     @Column(name = "style_film")
     private String styleFilm;
+
+
 }
