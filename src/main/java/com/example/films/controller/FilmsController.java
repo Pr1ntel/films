@@ -20,6 +20,27 @@ public class FilmsController {
         return filmsService.getAll();
     }
 
+    @GetMapping(value = "/horror")
+    public List<FilmsItem> getHorrorFilms() {
+        return filmsService.getFilmsByStyle("Horror");
+    }
+
+    @GetMapping(value = "/fantasy")
+    public List<FilmsItem> getFantasyFilms() {
+        return filmsService.getFilmsByStyle("Fantasy");
+    }
+
+    @GetMapping(value = "/action")
+    public List<FilmsItem> getActionFilms() {
+        return filmsService.getFilmsByStyle("Action");
+    }
+
+    @GetMapping(value = "/comedy")
+    public List<FilmsItem> getComedyFilms() {
+        return filmsService.getFilmsByStyle("Comedy");
+    }
+
+
 
     @DeleteMapping(value = "/deleteById/{id}")
     public void deleteById(@PathVariable int id) {
