@@ -39,6 +39,11 @@ public class FilmsController {
     public List<FilmsItem> getComedyFilms() {
         return filmsService.getFilmsByStyle("Comedy");
     }
+    
+  @GetMapping(value = "/findFilm/{id}")
+    public FilmsItem getFilmById(@PathVariable int id){
+        return filmsService.findFilmById(id);
+    }
 
 
 

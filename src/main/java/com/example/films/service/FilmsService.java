@@ -22,12 +22,15 @@ public class FilmsService {
         filmsRepository.deleteById(id);
     }
 
+    public FilmsItem findFilmById(int id) {
+       return filmsRepository.findFilmsItemById(id);
+    }
+
     public void addNew(FilmsItem filmsItem) {
         filmsRepository.save(filmsItem);
     }
 
-    public List<FilmsItem> getFilmsByStyle(String style)
-    {
+    public List<FilmsItem> getFilmsByStyle(String style) {
         return filmsRepository.findAllByStyleFilm(style);
     }
 
