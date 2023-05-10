@@ -11,4 +11,5 @@ import java.util.List;
 public interface FilmsRepository extends JpaRepository<FilmsItem, Integer> {
     List<FilmsItem> findAllByStyleFilm(String style);
     FilmsItem findFilmsItemById(int id);
+    FilmsItem deleteById(int id);
 }
