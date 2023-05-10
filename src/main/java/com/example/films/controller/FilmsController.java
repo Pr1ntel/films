@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping(path = "/films")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -46,7 +47,6 @@ public class FilmsController {
     }
 
 
-
     @DeleteMapping(value = "/deleteById/{id}")
     public void deleteById(@PathVariable int id) {
         filmsService.deleteById(id);
@@ -58,7 +58,7 @@ public class FilmsController {
     }
 
     @GetMapping(value = "/byStyle/{style}")
-    public List<FilmsItem> getFilmsByStyle(@PathVariable String style){
+    public List<FilmsItem> getFilmsByStyle(@PathVariable String style) {
         return filmsService.getFilmsByStyle(style);
     }
 
