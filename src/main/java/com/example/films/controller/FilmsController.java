@@ -52,7 +52,7 @@ public class FilmsController {
         filmsService.deleteById(id);
     }
 
-    @PostMapping(value = "/addNew")
+    @PostMapping(value = "/addFilm")
     public void addNew(@RequestBody FilmsItem filmsItem) {
         filmsService.addNew(filmsItem);
     }
