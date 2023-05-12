@@ -2,11 +2,15 @@ package com.example.films.controller;
 
 
 import com.example.films.model.FilmsItem;
+import com.example.films.repository.FilmsRepository;
 import com.example.films.service.FilmsService;
 import lombok.AllArgsConstructor;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
@@ -15,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FilmsController {
     private final FilmsService filmsService;
+    private final FilmsRepository filmsRepository;
 
     @GetMapping(value = "/getAllFilms")
     public List<FilmsItem> getAll() {
